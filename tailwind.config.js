@@ -15,7 +15,23 @@ export default {
         "2xl": "6rem",
       },
     },
-    extend: {},
+    extend: {
+      fontFamily: {
+        roboto: ["Roboto", "sans-serif"], // Add your custom font
+        lato: ["Lato", "sans-serif"],
+        syne: ["Syne"],
+        inter: ["Inter", "sans-serif"],
+      },
+      animation: {
+        "underline-animation": "underlineEffect 1s ease-in-out forwards",
+      },
+      keyframes: {
+        underlineEffect: {
+          "0%": { width: "0%" },
+          "100%": { width: "100%" },
+        },
+      },
+    },
   },
   plugins: [require("daisyui")],
 };

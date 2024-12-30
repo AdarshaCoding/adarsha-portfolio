@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 const Title = () => {
   return (
-    <h2 className="text-2xl cursor-pointer hover:text-orange-500">
+    <h2 className="text-2xl font-bold cursor-pointer hover:text-orange-500">
       <Link to={"/"}>Adarsha</Link>
     </h2>
   );
