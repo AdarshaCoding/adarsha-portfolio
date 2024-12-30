@@ -28,7 +28,7 @@ const Header = () => {
               <Link to={"/blogs"}>4. Blogs</Link>
             </li>
             <li className="cursor-pointer hover:text-white">
-              <Link to={"/contact"}>5. Contacts</Link>
+              <Link to={"/contact"}>5. Contact</Link>
             </li>
           </ul>
         </nav>
