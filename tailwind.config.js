@@ -2,7 +2,7 @@
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   daisyui: {
-    themes: ["light", "dark", "cupcake"],
+    themes: ["light", "dark", "cupcake", "night"],
   },
   theme: {
     container: {
@@ -21,6 +21,9 @@ export default {
         lato: ["Lato", "sans-serif"],
         syne: ["Syne"],
         inter: ["Inter", "sans-serif"],
+        inconsolata: ["Inconsolata", "monospace"],
+        merriweather: ["Merriweather", "serif"],
+        playfair: ["Playfair Display", "serif"],
       },
       animation: {
         "underline-animation": "underlineEffect 1s ease-in-out forwards",

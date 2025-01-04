@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 const Title = () => {
@@ -9,8 +10,33 @@ const Title = () => {
 };
 
 const Header = () => {
+  const [scroll, setScroll] = useState(false);
+
+  // Debugging: Log scroll position to verify it's updating
+  useEffect(() => {
+    const handleScroll = () => {
+      console.log("Scroll Position:", window.scrollY); // Log scroll position for debugging
+      if (window.scrollY > 50) {
+        setScroll(true);
+      } else {
+        setScroll(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    // Cleanup the event listener
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []); // Empty dependency array means this runs only once, on mount
+
   return (
-    <header className="font-mono text-white">
+    <header
+      className={`font-mono text-white mt-2 sticky top-0 left-0 transition-all duration-300 ${
+        scroll ? "bg-black z-10" : ""
+      }`}
+    >
       <div className="flex justify-between items-center">
         <Title />
         <nav>

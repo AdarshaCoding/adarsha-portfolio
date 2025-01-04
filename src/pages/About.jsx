@@ -1,10 +1,11 @@
+import { Link } from "react-router-dom";
 import aboutData from "../data/aboutData.json";
 import { experience, education } from "../utils/constants";
 const About = () => {
   return (
-    <div>
-      <div className="p-10 border border-gray-400 relative font-syne">
-        <h2 className="font-semibold text-black absolute top-[-18px] bg-zinc-200 p-2 px-10">
+    <div className="relative">
+      <div className="p-10 border border-gray-400 relative font-syne rounded-md">
+        <h2 className="font-semibold text-black absolute top-[-18px] bg-zinc-200 p-2 px-10 rounded-md">
           ABOUT ME
         </h2>
         <p className="text-gray-400 text-lg">{aboutData.about}</p>
@@ -46,8 +47,8 @@ const About = () => {
           </div>
         </div>
       </div>
-      <div className="p-10 border border-gray-400 relative font-syne my-24">
-        <h2 className="font-semibold text-black absolute top-[-18px] bg-zinc-200 p-2 px-10">
+      <div className="p-10 border border-gray-400 relative font-syne my-24 rounded-md">
+        <h2 className="font-semibold text-black absolute top-[-18px] bg-zinc-200 p-2 px-10 rounded-md">
           TIMELINE
         </h2>
 
@@ -97,6 +98,9 @@ const About = () => {
           </div>
         </div>
       </div>
+      <button className="p-2 font-mono absolute  bg-slate-600 right-5 bottom-5 rounded-md  hover:text-orange-500">
+        <Link to="/projects">Explore My Projects!</Link>
+      </button>
     </div>
   );
 };
