@@ -2,7 +2,7 @@ export const experience = [
   {
     id: 1,
     company: "LG Soft India",
-    designation: "Sr. Software Engineer",
+    designation: "Sr. Research Engineer",
     startYear: 2024,
     endYear: "NA",
     currentOrg: true,

@@ -37,4 +37,9 @@ export default {
     },
   },
   plugins: [require("daisyui")],
+  safelist: [
+    "decoration-offset-2",
+    "decoration-offset-4",
+    "decoration-offset-6",
+  ],
 };
