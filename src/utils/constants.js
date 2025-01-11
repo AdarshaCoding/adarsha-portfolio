@@ -72,3 +72,19 @@ export const education = [
     endYear: "2007",
   },
 ];
+
+export const skills = [
+  { id: 1, title: "HTML5" },
+  { id: 2, title: "CSS3" },
+  { id: 3, title: "JavaScript" },
+  { id: 4, title: "React" },
+  { id: 5, title: "Redux" },
+  { id: 6, title: "TailwindCSS" },
+  { id: 7, title: "DaisyUI" },
+  { id: 8, title: "MongoDB" },
+  { id: 9, title: "DB2" },
+  { id: 10, title: "MySQL" },
+  { id: 11, title: "NodeJS" },
+  { id: 12, title: "Express.JS" },
+  { id: 13, title: "AS400" },
+];

@@ -12,9 +12,11 @@ const Contact = () => {
           GET IN TOUCH
         </h2>
       </div>
-      <button className="p-2 font-mono absolute right-5 bottom-5 rounded-md bg-slate-600 px-8 hover:text-orange-500">
-        <Link to="/">HOME</Link>
-      </button>
+      <Link to="/">
+        <button className="p-2 font-mono font-bold absolute right-5 bottom-5 rounded-md bg-slate-600 px-4 hover:text-orange-500">
+          HOME
+        </button>
+      </Link>
     </div>
   );
 };

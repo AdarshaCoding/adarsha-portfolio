@@ -1,23 +1,27 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { blogs } from "../data/blogsData";
 
 const Blogs = () => {
   return (
-    <div className="p-10 border border-gray-400 relative font-syne rounded-md h-96">
+    <div className="p-10 border border-gray-400 relative font-syne rounded-md">
       <h2 className="font-semibold text-black absolute top-[-18px] bg-zinc-200 p-2 px-10 rounded-md">
         BLOGS
       </h2>
       <div>
-        {new Array(5).fill().map((_, item) => (
-          <div className="w-full border m-2 p-2" key={item}>
-            Blog - {item + 1}
+        {blogs.map((blog) => (
+          <div className="w-full border m-2 p-2 font-inter" key={blog.id}>
+            <h2 className="text-lg text-orange-400">{blog.title}</h2>
+            <p className="text-sm">{blog.description}</p>
           </div>
         ))}
       </div>
 
-      <button className="p-2 font-mono absolute  bg-slate-600 right-5 bottom-2 rounded-md  hover:text-orange-500 ">
-        <Link to="/contact">To Connect With Me!</Link>
-      </button>
+      <Link to="/contact">
+        <button className="p-2 font-mono absolute bg-slate-600 right-5 bottom-2 rounded-md  hover:text-orange-500 ">
+          To Connect With Me!
+        </button>
+      </Link>
     </div>
   );
 };

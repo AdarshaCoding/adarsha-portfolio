@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const Title = () => {
   return (
@@ -10,8 +10,7 @@ const Title = () => {
 };
 
 const Header = () => {
-  // Set initial state for the active page
-  const [activePage, setActivePage] = useState("home");
+  const location = useLocation(); // Get the current route path
 
   const handlePageChange = (page) => {
     setActivePage(page);
@@ -24,55 +23,65 @@ const Header = () => {
         <Title />
         <nav>
           <ul className="flex gap-8 text-sm font-semibold text-green-400">
-            <li
-              onClick={() => handlePageChange("home")}
-              className={`font-semibold ${
-                activePage === "home"
-                  ? "border-b-2 border-slate-200 pb-[1px]"
-                  : ""
-              } hover:text-white`}
-            >
-              <Link to={"/"}>Home</Link>
+            <li>
+              <Link
+                to={"/"}
+                className={`font-semibold ${
+                  location.pathname === "/"
+                    ? "border-b-2 border-slate-200 pb-[1px]"
+                    : ""
+                } hover:text-white`}
+              >
+                Home
+              </Link>
             </li>
-            <li
-              onClick={() => handlePageChange("about")}
-              className={`font-semibold ${
-                activePage === "about"
-                  ? "border-b-2 border-slate-200 pb-[1px]"
-                  : ""
-              } hover:text-white`}
-            >
-              <Link to={"/about"}>About</Link>
+            <li>
+              <Link
+                to={"/about"}
+                className={`font-semibold ${
+                  location.pathname === "/about"
+                    ? "border-b-2 border-slate-200 pb-[1px]"
+                    : ""
+                } hover:text-white`}
+              >
+                About
+              </Link>
             </li>
-            <li
-              onClick={() => handlePageChange("projects")}
-              className={`font-semibold ${
-                activePage === "projects"
-                  ? "border-b-2 border-slate-200 pb-[1px]"
-                  : ""
-              } hover:text-white`}
-            >
-              <Link to={"/projects"}>Projects</Link>
+            <li>
+              <Link
+                to={"/projects"}
+                className={`font-semibold ${
+                  location.pathname === "/projects"
+                    ? "border-b-2 border-slate-200 pb-[1px]"
+                    : ""
+                } hover:text-white`}
+              >
+                Projects
+              </Link>
             </li>
-            <li
-              onClick={() => handlePageChange("blogs")}
-              className={`font-semibold ${
-                activePage === "blogs"
-                  ? "border-b-2 border-slate-200 pb-[1px]"
-                  : ""
-              } hover:text-white`}
-            >
-              <Link to={"/blogs"}>Blogs</Link>
+            <li>
+              <Link
+                to={"/blogs"}
+                className={`font-semibold ${
+                  location.pathname === "/blogs"
+                    ? "border-b-2 border-slate-200 pb-[1px]"
+                    : ""
+                } hover:text-white`}
+              >
+                Blogs
+              </Link>
             </li>
-            <li
-              onClick={() => handlePageChange("contact")}
-              className={`font-semibold ${
-                activePage === "contact"
-                  ? "border-b-2 border-slate-200 pb-[1px]"
-                  : ""
-              } hover:text-white`}
-            >
-              <Link to={"/contact"}>Contact</Link>
+            <li>
+              <Link
+                to={"/contact"}
+                className={`font-semibold ${
+                  location.pathname === "/contact"
+                    ? "border-b-2 border-slate-200 pb-[1px]"
+                    : ""
+                } hover:text-white`}
+              >
+                Contact
+              </Link>
             </li>
           </ul>
         </nav>

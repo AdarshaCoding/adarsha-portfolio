@@ -1,14 +1,20 @@
 import { Link } from "react-router-dom";
 import aboutData from "../data/aboutData.json";
-import { experience, education } from "../utils/constants";
+import { experience, education, skills } from "../utils/constants";
+import SkillCard from "../components/SkillCard";
 const About = () => {
+  console.log(aboutData);
   return (
     <div className="relative">
       <div className="p-10 border border-gray-400 relative font-syne rounded-md">
         <h2 className="font-semibold text-black absolute top-[-18px] bg-zinc-200 p-2 px-10 rounded-md">
           ABOUT ME
         </h2>
-        <p className="text-gray-400 text-lg">{aboutData.about}</p>
+        {aboutData.about.map((item, idx) => (
+          <p key={idx} className="text-gray-400 text-lg mb-4">
+            {item}
+          </p>
+        ))}
         <hr className="my-6 mx-auto border-gray-500" />
         <div className="grid grid-flow-col text-gray-400 font-mono">
           <div className="grid grid-flow-col">
@@ -45,6 +51,16 @@ const About = () => {
               <h2>{aboutData.freelance}</h2>
             </div>
           </div>
+        </div>
+      </div>
+      <div className="p-10 border border-gray-400 relative font-syne rounded-md my-20">
+        <h2 className="font-semibold text-black absolute top-[-18px] bg-zinc-200 p-2 px-10 rounded-md">
+          SKILLS
+        </h2>
+        <div className="flex flex-wrap">
+          {skills.map((skill) => (
+            <SkillCard key={skill.id} skill={skill.title} />
+          ))}
         </div>
       </div>
       <div className="p-10 border border-gray-400 relative font-syne my-24 rounded-md">
@@ -98,9 +114,12 @@ const About = () => {
           </div>
         </div>
       </div>
-      <button className="p-2 font-mono absolute  bg-slate-600 right-5 bottom-5 rounded-md  hover:text-orange-500">
-        <Link to="/projects">Explore My Projects!</Link>
-      </button>
+
+      <Link to="/projects">
+        <button className="p-2 font-mono font-bold absolute  bg-slate-600 right-5 bottom-5 rounded-md  hover:text-orange-500">
+          Explore My Projects!
+        </button>
+      </Link>
     </div>
   );
 };

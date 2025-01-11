@@ -7,5 +7,5 @@
     "freelance": "Available",
     "website":"Work In Progress",
     "job":"Web Developer",
-    "about":"My name is Adarsha P C and I am a Web Developer, and I'm very passionate and dedicated to my work. With 5 years experience as a professional Web Developer, I have acquired the skills and knowledge necessary to make your project a success. I enjoy every step of the development process, from discussion and collaboration. Thanks a lot for your attention and your trust!"
+    "about": ["Hello! I'm Adarsha P C, a dedicated and passionate Web Developer with over 5 years of professional experience. I specialize in creating dynamic, user-friendly web applications that meet both business needs and user expectations.",  "Throughout my career, I have honed a wide range of skills and a deep understanding of the development process. From the initial discussion and collaboration to the final deployment, I am committed to delivering high-quality solutions. I take pride in my work and am always eager to bring innovative ideas to life.",  "Thank you for taking the time to visit my portfolio. I appreciate your trust and look forward to collaborating with you on your next project!"]
 }
