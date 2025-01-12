@@ -12,12 +12,9 @@ const Title = () => {
 const Header = () => {
   const location = useLocation(); // Get the current route path
 
-  const handlePageChange = (page) => {
-    setActivePage(page);
-  };
   return (
     <header
-      className={`font-mono text-white sticky top-0 left-0 px-10 bg-base-100 py-2 z-50 shadow-md`}
+      className={`font-mono text-white sticky top-0 left-0 px-10 py-2 z-50 shadow-gray-600 shadow-md bg-slate-700`}
     >
       <div className="flex justify-between items-center">
         <Title />

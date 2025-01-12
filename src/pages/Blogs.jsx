@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { blogs } from "../data/blogsData";
+import BlogCard from "../components/BlogCard";
 
 const Blogs = () => {
   return (
@@ -8,18 +9,9 @@ const Blogs = () => {
       <h2 className="font-semibold text-black absolute top-[-18px] bg-zinc-200 p-2 px-10 rounded-md">
         BLOGS
       </h2>
-      <div>
-        {blogs.map((blog) => (
-          <div className="w-full border m-2 p-2 font-inter" key={blog.id}>
-            <h2 className="text-lg text-orange-400">{blog.title}</h2>
-            <p className="text-sm">{blog.description}</p>
-            <a href={blog.blogLink} target="_blank" rel="noopener noreferrer">
-              Read More...
-            </a>
-          </div>
-        ))}
-      </div>
-
+      {blogs.map((blog) => (
+        <BlogCard key={blog.id} blog={blog} />
+      ))}
       <Link to="/contact">
         <button className="p-2 font-mono absolute bg-slate-600 right-5 bottom-2 rounded-md  hover:text-orange-500 ">
           To Connect With Me!
