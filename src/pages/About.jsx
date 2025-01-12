@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import aboutData from "../data/aboutData.json";
 import { experience, education, skills } from "../utils/constants";
 import SkillCard from "../components/SkillCard";
+import { calculateAge } from "../utils/helper";
 const About = () => {
   return (
     <div className="relative">
@@ -42,7 +43,7 @@ const About = () => {
               <h2>Freelance:</h2>
             </div>
             <div>
-              <h2>{aboutData.age}</h2>
+              <h2>{calculateAge(aboutData.dob)}</h2>
               <h2>{aboutData.job}</h2>
               <h2 className="text-white cursor-pointer hover:underline underline-offset-4">
                 {aboutData.email}

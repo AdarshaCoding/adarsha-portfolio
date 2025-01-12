@@ -5,7 +5,7 @@ import BlogCard from "../components/BlogCard";
 
 const Blogs = () => {
   return (
-    <div className="p-10 border border-gray-400 relative font-syne rounded-md ">
+    <div className="p-10 border border-gray-400 relative font-syne rounded-md mb-10">
       <h2 className="font-semibold text-black absolute top-[-18px] bg-zinc-200 p-2 px-10 rounded-md">
         BLOGS
       </h2>

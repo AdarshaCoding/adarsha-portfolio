@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 
 const Title = () => {
@@ -19,7 +18,7 @@ const Header = () => {
       <div className="flex justify-between items-center">
         <Title />
         <nav>
-          <ul className="flex gap-8 text-sm font-semibold text-green-400">
+          <ul className="flex gap-8 text-md font-semibold text-green-400">
             <li>
               <Link
                 to={"/"}

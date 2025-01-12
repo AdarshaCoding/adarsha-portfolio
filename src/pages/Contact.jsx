@@ -1,53 +1,83 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
+import { checkValidateData } from "../utils/validate";
 
 const Contact = () => {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [phone, setPhone] = useState("");
-  const [service, setService] = useState("");
-  const [message, setMessage] = useState("");
+  const [errorMessage, setErrorMessage] = useState(null);
+  const name = useRef(null);
+  const email = useRef(null);
+  const phone = useRef(null);
+  const service = useRef(null);
+  const textArea = useRef(null);
 
-  // const [] = useFormValidator();
+  const handleButtonClick = () => {
+    // validate the form data
+    const selectedValue = service.current.value;
+    const message = checkValidateData(
+      name.current.value,
+      email.current.value,
+      phone.current.value,
+      service.current.value,
+      textArea.current.value
+    );
+    setErrorMessage(message);
 
+    // Continue to send an email
+  };
   return (
     <div className="relative">
-      <div className="p-10 border border-gray-400 relative font-syne rounded-md">
+      <div className="p-10 border border-gray-400 relative font-syne rounded-md mb-20">
         <h2 className="font-semibold text-black absolute top-[-18px] bg-zinc-200 p-2 px-10 rounded-md">
           GET IN TOUCH
         </h2>
-        <div className="w-3/4 mx-auto font-inter text-md">
+        <form
+          onSubmit={(e) => e.preventDefault()}
+          className="w-3/4 mx-auto font-inter text-md mt-2"
+        >
           <div className="flex flex-wrap gap-4 ">
             <input
+              ref={name}
               type="text"
-              placeholder="Name"
+              placeholder="Full Name"
               className="p-2 outline-none bg-slate-50 text-black focus:ring-2 focus:ring-orange-300 w-60"
             />
             <input
-              type="email"
+              ref={email}
+              type="text"
               placeholder="Email"
               className="p-2  outline-none bg-slate-50 text-black focus:ring-2 focus:ring-orange-300 w-60"
             />
             <input
+              ref={phone}
               type="text"
               placeholder="Phone"
               className="p-2  outline-none bg-slate-50 text-black focus:ring-2 focus:ring-orange-300 w-60"
             />
-            <select className="p-2 bg-slate-50 text-black  outline-none w-60 cursor-pointer focus:ring-2 focus:ring-orange-300">
-              <option className="">Choose Service</option>
-              <option>Web Development</option>
-              <option>Freelancing</option>
+            <select
+              ref={service}
+              className="p-2 bg-slate-50 text-black  outline-none w-60 cursor-pointer focus:ring-2 focus:ring-orange-300"
+            >
+              <option value="">Choose Service</option>
+              <option value="Web Development">Web Development</option>
+              <option value="Freelance">Freelance</option>
             </select>
           </div>
           <div>
             <textarea
-              className="p-2 my-3 outline-none bg-slate-50 text-black w-full h-44 border border-gray-300 focus:ring-2 focus:ring-orange-300"
+              ref={textArea}
+              className="p-2 mt-3 outline-none bg-slate-50 text-black w-full h-44 border border-gray-300 focus:ring-2 focus:ring-orange-300"
               placeholder="Enter your message here..."
             ></textarea>
-            <button className="px-5 p-2 bg-slate-600 text-white rounded-md font-bold  hover:text-orange-500">
+            <p className="text-red-600 font-inconsolata text-lg my-1 font-semibold">
+              {errorMessage}
+            </p>
+            <button
+              onClick={handleButtonClick}
+              className="px-5 p-2 bg-slate-600 text-white font-bold  hover:text-orange-500"
+            >
               SEND MESSAGE
             </button>
           </div>
-        </div>
+        </form>
       </div>
     </div>
   );

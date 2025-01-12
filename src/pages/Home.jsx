@@ -14,9 +14,13 @@ const Home = () => {
         <h2 className="my-3 font-semibold text-3xl font-inter">
           ADARSHA CHANNAPPA
         </h2>
-        <h3 className="font-mono font-bold text-orange-500">
-          Web Developer 🚀
-        </h3>
+        <div className="flex flex-row items-center">
+          <hr className="w-40" />
+          <h3 className="font-mono font-bold text-orange-500 px-2 text-md">
+            Web Developer 🚀
+          </h3>
+          <hr className="w-40" />
+        </div>
       </div>
       <Link to="/about">
         <button className="p-2 font-mono font-bold absolute bg-slate-600 right-5 bottom-5 rounded-md hover:text-orange-500">
