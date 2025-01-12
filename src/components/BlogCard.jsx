@@ -25,7 +25,7 @@ const BlogCard = ({ blog }) => {
             href={blog.blogLink}
             target="_blank"
             rel="noopener noreferrer"
-            className="absolute -bottom-5 right-0 hover:text-blue-500"
+            className="absolute -bottom-5 right-0 hover:text-white"
           >
             Read More...
           </a>

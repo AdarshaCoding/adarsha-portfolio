@@ -12,23 +12,20 @@ export const blogs = [
     title: "JavaScript - Promise",
     description:
       "In JavaScript, the promise is an object represents the eventual completion (or failure) of an asynchronous operation and its resulting value: var promise = new Promise( function(resolve, reject) {.....}",
-    blogLink:
-      "https://kkirtigoel01.medium.com/promises-in-javascript-js-27baf0e506b5",
+    blogLink: "",
   },
   {
     id: 3,
     title: "JavaScript - const, let & var keyword",
     description:
       "let, var, and const are keywords used for variable declaration in JavaScript. Variables are fundamental building blocks of any programming language, and JavaScript is no exception. They help store and manipulate data, making your code dynamic and flexible.There are three key ways to declare a variable in JavaScript: var, let, and const. Although all declared variables, have distinct characteristics and should be used in different situations. ",
-    blogLink:
-      "https://umarfarooquekhan.medium.com/javascript-building-block-let-var-and-const-with-interview-question-e615ccc340f3",
+    blogLink: "",
   },
   {
     id: 4,
     title: "Var, Let, Const: Hoisting and Temporal Dead Zone In JavaScript",
     description:
       "Hoisting is a term commonly used in Javascript that refers to the process whereby the declaration of functions, variables or classes appears to be moved to the top of their scope, prior to execution of the code.",
-    blogLink:
-      "https://medium.com/@jeremy_levy/var-let-const-hoisting-and-temporal-dead-zone-in-javascript-d26e2207c823",
+    blogLink: "",
   },
 ];

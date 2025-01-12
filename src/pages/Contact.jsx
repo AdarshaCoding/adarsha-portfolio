@@ -31,7 +31,7 @@ const Contact = () => {
         </h2>
         <form
           onSubmit={(e) => e.preventDefault()}
-          className="w-3/4 mx-auto font-inter text-md mt-2"
+          className="w-3/4 mx-auto font-inter text-[15px] mt-2"
         >
           <div className="flex flex-wrap gap-4 ">
             <input
@@ -57,8 +57,8 @@ const Contact = () => {
               className="p-2 bg-slate-50 text-black  outline-none w-60 cursor-pointer focus:ring-2 focus:ring-orange-300"
             >
               <option value="">Choose Service</option>
-              <option value="Web Development">Web Development</option>
-              <option value="Freelance">Freelance</option>
+              <option value="Web Development">Frontend-React.js</option>
+              <option value="Freelance">Backend-Node.js</option>
             </select>
           </div>
           <div>
