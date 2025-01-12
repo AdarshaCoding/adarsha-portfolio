@@ -10,7 +10,7 @@ const Projects = () => {
       </h2>
       <div className=" text-gray-400">
         {projects.map((project) => (
-          <ProjectCard key={project.title} project={project} />
+          <ProjectCard key={project.id} project={project} />
         ))}
       </div>
       <Link to="/blogs">

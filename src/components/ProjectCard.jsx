@@ -1,8 +1,6 @@
 import React from "react";
 
 const ProjectCard = ({ project }) => {
-  console.log(project);
-
   return (
     <div className="w-full m-2 p-2 font-inter my-4 ">
       <div className="grid grid-flow-row gap-3 w-full">

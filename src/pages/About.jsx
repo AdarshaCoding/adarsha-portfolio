@@ -3,7 +3,6 @@ import aboutData from "../data/aboutData.json";
 import { experience, education, skills } from "../utils/constants";
 import SkillCard from "../components/SkillCard";
 const About = () => {
-  console.log(aboutData);
   return (
     <div className="relative">
       <div className="p-10 border border-gray-400 relative font-syne rounded-md">

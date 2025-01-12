@@ -5,13 +5,15 @@ import BlogCard from "../components/BlogCard";
 
 const Blogs = () => {
   return (
-    <div className="p-10 border border-gray-400 relative font-syne rounded-md">
+    <div className="p-10 border border-gray-400 relative font-syne rounded-md ">
       <h2 className="font-semibold text-black absolute top-[-18px] bg-zinc-200 p-2 px-10 rounded-md">
         BLOGS
       </h2>
-      {blogs.map((blog) => (
-        <BlogCard key={blog.id} blog={blog} />
-      ))}
+      <div className="mb-10">
+        {blogs.map((blog) => (
+          <BlogCard key={blog.id} blog={blog} />
+        ))}
+      </div>
       <Link to="/contact">
         <button className="p-2 font-mono absolute bg-slate-600 right-5 bottom-2 rounded-md  hover:text-orange-500 ">
           To Connect With Me!
