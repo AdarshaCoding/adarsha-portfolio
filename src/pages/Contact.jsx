@@ -34,10 +34,10 @@ const Contact = () => {
       //emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', emailData, 'YOUR_PUBLIC_KEY')
       emailjs
         .send(
-          process.env.REACT_APP_EMAILJS_SERVICE_ID,
-          process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
+          import.meta.env.VITE_EMAILJS_SERVICE_ID, // Use the environment variable here
+          import.meta.env.VITE_EMAILJS_TEMPLATE_ID, // Use the environment variable here
           emailData,
-          process.env.REACT_APP_EMAILJS_PUBLIC_KEY
+          import.meta.env.VITE_EMAILJS_PUBLIC_KEY // Use the environment variable here
         )
         .then((response) => {
           console.log("Email sent successfully:", response);
