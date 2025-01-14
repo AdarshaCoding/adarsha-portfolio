@@ -1,8 +1,10 @@
 import { useRef, useState } from "react";
 import { checkValidateData } from "../utils/validate";
+import emailjs from "emailjs-com";
 
 const Contact = () => {
-  const [errorMessage, setErrorMessage] = useState(null);
+  const [showMessage, setshowMessage] = useState(null);
+
   const name = useRef(null);
   const email = useRef(null);
   const phone = useRef(null);
@@ -19,9 +21,40 @@ const Contact = () => {
       service.current.value,
       textArea.current.value
     );
-    setErrorMessage(message);
-
+    setshowMessage(message);
     // Continue to send an email
+    if (!message) {
+      const emailData = {
+        from_name: name.current.value,
+        to_name: "Adarsha",
+        message: textArea.current.value,
+      };
+
+      console.log(emailData);
+      //emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', emailData, 'YOUR_PUBLIC_KEY')
+      emailjs
+        .send(
+          process.env.REACT_APP_EMAILJS_SERVICE_ID,
+          process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
+          emailData,
+          process.env.REACT_APP_EMAILJS_PUBLIC_KEY
+        )
+        .then((response) => {
+          console.log("Email sent successfully:", response);
+          setshowMessage("Email sent successfully!");
+
+          // Clear all input fields after sending the email
+          name.current.value = "";
+          email.current.value = "";
+          phone.current.value = "";
+          service.current.value = "";
+          textArea.current.value = "";
+        })
+        .catch((error) => {
+          console.log("Failed to send email:", error);
+          setshowMessage("Email not sent successfully!");
+        });
+    }
   };
   return (
     <div className="relative">
@@ -58,7 +91,8 @@ const Contact = () => {
             >
               <option value="">Choose Service</option>
               <option value="Web Development">Frontend-React.js</option>
-              <option value="Freelance">Backend-Node.js</option>
+              <option value="Node.js Development">Backend-Node.js</option>
+              <option value="Freelance">Freelance</option>
             </select>
           </div>
           <div>
@@ -68,7 +102,7 @@ const Contact = () => {
               placeholder="Enter your message here..."
             ></textarea>
             <p className="text-red-600 font-inconsolata text-lg my-1 font-semibold">
-              {errorMessage}
+              {showMessage}
             </p>
             <button
               onClick={handleButtonClick}
