@@ -14,7 +14,7 @@ const Projects = () => {
         ))}
       </div>
       <Link to="/blogs">
-        <button className="p-2 text-xs md:text-[15px] font-bold font-mono absolute  bg-slate-600 right-5 bottom-2 rounded-md hover:text-orange-500">
+        <button className="p-2 text-xs md:text-[15px] font-bold font-mono absolute  bg-slate-600 right-9 bottom-3 rounded-md hover:text-orange-500">
           Explore My Blogs!
         </button>
       </Link>
