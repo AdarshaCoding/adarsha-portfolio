@@ -3,6 +3,7 @@ import aboutData from "../data/aboutData.json";
 import { experience, education, skills } from "../utils/constants";
 import SkillCard from "../components/SkillCard";
 import { calculateAge } from "../utils/helper";
+
 const About = () => {
   return (
     <div className="relative">
@@ -63,7 +64,7 @@ const About = () => {
           ))}
         </div>
       </div>
-      <div className="p-10 border border-gray-400 relative font-syne my-24 rounded-md">
+      <div className="p-10 border border-gray-400 relative font-syne mt-24 rounded-md">
         <h2 className="font-semibold text-black absolute top-[-18px] bg-zinc-200 p-2 px-10 rounded-md">
           TIMELINE
         </h2>
@@ -113,13 +114,20 @@ const About = () => {
             </div>
           </div>
         </div>
+        <Link to="/projects">
+          <button className="p-2 font-mono font-bold absolute  bg-slate-600 right-5 bottom-5 rounded-md hover:text-orange-500">
+            Explore My Projects!
+          </button>
+        </Link>
       </div>
 
-      <Link to="/projects">
-        <button className="p-2 font-mono font-bold absolute  bg-slate-600 right-5 bottom-5 rounded-md  hover:text-orange-500">
-          Explore My Projects!
-        </button>
-      </Link>
+      <div className="my-10">
+        <a href="/Adarsha_PC_Resume.pdf" download>
+          <button className="p-2 px-5 rounded-md font-mono text-md font-bold hover:text-orange-500 bg-slate-600">
+            Download Resume
+          </button>
+        </a>
+      </div>
     </div>
   );
 };

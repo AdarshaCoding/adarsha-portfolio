@@ -71,23 +71,23 @@ const Contact = () => {
               ref={name}
               type="text"
               placeholder="Full Name"
-              className="p-2 outline-none bg-slate-50 text-black focus:ring-2 focus:ring-orange-300 w-60"
+              className="p-2 outline-none bg-slate-50 text-black w-60 rounded-sm"
             />
             <input
               ref={email}
               type="text"
               placeholder="Email"
-              className="p-2  outline-none bg-slate-50 text-black focus:ring-2 focus:ring-orange-300 w-60"
+              className="p-2  outline-none bg-slate-50 text-black w-60 rounded-sm"
             />
             <input
               ref={phone}
               type="text"
               placeholder="Phone"
-              className="p-2  outline-none bg-slate-50 text-black focus:ring-2 focus:ring-orange-300 w-60"
+              className="p-2  outline-none bg-slate-50 text-black  w-60 rounded-sm"
             />
             <select
               ref={service}
-              className="p-2 bg-slate-50 text-black  outline-none w-60 cursor-pointer focus:ring-2 focus:ring-orange-300"
+              className="p-2 bg-slate-50 text-black  outline-none w-60 cursor-pointer "
             >
               <option value="">Choose Service</option>
               <option value="Web Development">Frontend-React.js</option>
@@ -98,7 +98,7 @@ const Contact = () => {
           <div>
             <textarea
               ref={textArea}
-              className="p-2 mt-3 outline-none bg-slate-50 text-black w-full h-44 border border-gray-300 focus:ring-2 focus:ring-orange-300"
+              className="p-2 mt-3 outline-none bg-slate-50 text-black w-full h-44 border border-gray-300 rounded-sm "
               placeholder="Enter your message here..."
             ></textarea>
             <p className="text-red-600 font-inconsolata text-lg my-1 font-semibold">
@@ -106,7 +106,7 @@ const Contact = () => {
             </p>
             <button
               onClick={handleButtonClick}
-              className="px-5 p-2 bg-slate-600 text-white font-bold  hover:text-orange-500"
+              className="px-5 p-2 bg-slate-600 rounded-sm font-bold hover:text-orange-500"
             >
               SEND MESSAGE
             </button>
