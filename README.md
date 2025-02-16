@@ -15,3 +15,9 @@ Currently, two official plugins are available:
 - firebase login (Sign in to Google)
 - firebase init (Initiate your project)
 - firebase deploy (When you're ready, deploy your web app)
+
+To deploy the changes from your local code base to the already deployed Firebase project, you just need to follow these simple steps:
+• Make your changes locally.
+• Rebuild your Vite app with npm run build.
+• Deploy the build to Firebase Hosting using firebase deploy.
+• Check the changes at your Firebase Hosting URL.

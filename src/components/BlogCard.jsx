@@ -13,13 +13,15 @@ const BlogCard = ({ blog }) => {
         className="flex justify-between cursor-pointer"
         onClick={() => handleHeaderClick(blog.id)}
       >
-        <h2 className="text-lg mb-3 font-semibold">{blog.title}</h2>
+        <h2 className="text-xs md:text-sm lg:text-md mb-3 font-semibold">
+          {blog.title}
+        </h2>
         <div className="cursor-pointer">
           {activeIndex === null ? <SlArrowDown /> : <SlArrowUp />}
         </div>
       </div>
       {activeIndex === blog.id && (
-        <div className="text-sm relative text-gray-400">
+        <div className="text-xs md:text-sm lg:text-md relative text-gray-400">
           <div className="mb-5">{blog.description}</div>
           <a
             href={blog.blogLink}

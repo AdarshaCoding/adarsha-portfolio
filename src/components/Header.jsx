@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { GiHamburgerMenu } from "react-icons/gi";
+import { RiCloseLargeLine } from "react-icons/ri";
 import { Link, useLocation } from "react-router-dom";
 
 const Title = () => {
@@ -88,7 +90,15 @@ const Header = () => {
         </nav>
         {/* Mobile Menu Button */}
         <button className="md:hidden text-white" onClick={toggleMenu}>
-          <span className="text-2xl">☰</span>
+          {isMobileMenuOpen ? (
+            <span className="text-2xl">
+              <RiCloseLargeLine />
+            </span>
+          ) : (
+            <span className="text-2xl">
+              <GiHamburgerMenu />
+            </span>
+          )}
         </button>
       </div>
       {isMobileMenuOpen && (
@@ -97,7 +107,7 @@ const Header = () => {
             <li>
               <Link
                 to={"/"}
-                className={`font-semibold ${
+                className={`font-semibold  ${
                   location.pathname === "/"
                     ? "border-b-2 border-slate-200 pb-[1px]"
                     : ""

@@ -64,7 +64,7 @@ const Contact = () => {
         </h2>
         <form
           onSubmit={(e) => e.preventDefault()}
-          className="w-3/4 mx-auto font-inter text-[15px] mt-2"
+          className="w-3/4 mx-auto font-inter text-xs md:text-sm  mt-2"
         >
           <div className="flex flex-wrap gap-4 ">
             <input
@@ -101,7 +101,7 @@ const Contact = () => {
               className="p-2 mt-3 outline-none bg-slate-50 text-black w-full h-44 border border-gray-300 rounded-sm "
               placeholder="Enter your message here..."
             ></textarea>
-            <p className="text-red-600 font-inconsolata text-lg my-1 font-semibold">
+            <p className="text-red-600 font-inconsolata text-sm md:text-lg my-1 font-semibold">
               {showMessage}
             </p>
             <button

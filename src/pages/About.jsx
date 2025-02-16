@@ -12,45 +12,28 @@ const About = () => {
           ABOUT ME
         </h2>
         {aboutData.about.map((item, idx) => (
-          <p key={idx} className="text-gray-400 text-lg mb-4">
+          <p key={idx} className="text-gray-400 text-sm md:text-lg mb-4">
             {item}
           </p>
         ))}
         <hr className="my-6 mx-auto border-gray-500" />
-        <div className="grid grid-flow-col text-gray-400 font-mono">
-          <div className="grid grid-flow-col">
-            <div className="">
-              <h2>Name:</h2>
-              <h2>City:</h2>
-              <h2>Phone:</h2>
-              <h2>Website:</h2>
-            </div>
-            <div>
-              <h2>{aboutData.name}</h2>
-              <h2>{aboutData.city}</h2>
-              <h2 className="text-white cursor-pointer hover:underline underline-offset-4">
-                {aboutData.phone}
-              </h2>
-              <h2 className="text-white cursor-pointer hover:underline underline-offset-4">
-                {aboutData.website}
-              </h2>
-            </div>
+        <div className="grid grid-flow-row lg:grid-flow-col text-gray-400 font-mono text-xs md:text-lg">
+          <div className="">
+            <h2>Name: {aboutData.name}</h2>
+            <h2>City: {aboutData.city}</h2>
+            <h2 className="text-white cursor-pointer hover:underline underline-offset-4">
+              Phone: {aboutData.phone}
+            </h2>
+            <h2>Website: {aboutData.website}</h2>
           </div>
-          <div className="grid grid-flow-col">
-            <div>
-              <h2>Age:</h2>
-              <h2>Job:</h2>
-              <h2>Email:</h2>
-              <h2>Freelance:</h2>
-            </div>
-            <div>
-              <h2>{calculateAge(aboutData.dob)}</h2>
-              <h2>{aboutData.job}</h2>
-              <h2 className="text-white cursor-pointer hover:underline underline-offset-4">
-                {aboutData.email}
-              </h2>
-              <h2>{aboutData.freelance}</h2>
-            </div>
+
+          <div className="">
+            <h2>Age: {calculateAge(aboutData.dob)} </h2>
+            <h2>Job: {aboutData.job}</h2>
+            <h2 className="text-white cursor-pointer hover:underline underline-offset-4">
+              Email: {aboutData.email}
+            </h2>
+            <h2>Freelance: {aboutData.freelance}</h2>
           </div>
         </div>
       </div>
@@ -58,7 +41,7 @@ const About = () => {
         <h2 className="font-semibold text-black absolute top-[-18px] bg-zinc-200 p-2 px-10 rounded-md">
           SKILLS
         </h2>
-        <div className="flex flex-wrap">
+        <div className="flex flex-wrap text-xs md:text-lg">
           {skills.map((skill) => (
             <SkillCard key={skill.id} skill={skill.title} />
           ))}
@@ -69,7 +52,7 @@ const About = () => {
           TIMELINE
         </h2>
 
-        <div className="grid grid-flow-col text-gray-400 font-mono">
+        <div className="grid grid-flow-row lg:grid-flow-col text-gray-400 font-mono">
           <div className="grid grid-flow-col">
             <div>
               <h2 className="text-white text-lg">WORKING EXPERIENCE</h2>
@@ -115,7 +98,7 @@ const About = () => {
           </div>
         </div>
         <Link to="/projects">
-          <button className="p-2 font-mono font-bold absolute  bg-slate-600 right-5 bottom-5 rounded-md hover:text-orange-500">
+          <button className="p-2 text-xs md:text-[15px] font-mono font-bold absolute bg-slate-600 right-5 bottom-5 rounded-md hover:text-orange-500">
             Explore My Projects!
           </button>
         </Link>
@@ -123,7 +106,7 @@ const About = () => {
 
       <div className="my-10">
         <a href="/Adarsha_PC_Resume.pdf" download>
-          <button className="p-2 px-5 rounded-md font-mono text-md font-bold hover:text-orange-500 bg-slate-600">
+          <button className="p-2 px-5 text-xs md:text-lg rounded-md font-mono text-md font-bold hover:text-orange-500 bg-slate-600">
             Download Resume
           </button>
         </a>

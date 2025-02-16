@@ -2,13 +2,13 @@ import React from "react";
 
 const ProjectCard = ({ project }) => {
   return (
-    <div className="w-full m-2 p-2 font-inter my-4 ">
+    <div className="w-full m-2 p-2 font-inter my-4">
       <div className="grid grid-flow-row gap-3 w-full">
-        <h2 className="text-xl text-orange-400 font-bold">
+        <h2 className="text-sm md:text-xl text-orange-400 font-bold">
           {project.id}. {project.title}
         </h2>
-        <p className="text-sm">{project.description}</p>
-        <h2 className="bg-zinc-50 w-36 text-black text-md font-semibold text-center">
+        <p className="text-xs md:text-sm">{project.description}</p>
+        <h2 className="bg-zinc-50 w-36 text-black text-xs md:text-sm font-semibold text-center">
           User-Friendly UI
         </h2>
         <ul className="text-sm">
@@ -19,10 +19,10 @@ const ProjectCard = ({ project }) => {
           ))}
         </ul>
         <div className="">
-          <h2 className="bg-zinc-50 w-36 text-black text-sm font-semibold text-center">
+          <h2 className="bg-zinc-50 w-36 text-black text-xs md:text-sm font-semibold text-center">
             Technologies
           </h2>
-          <div className="flex flex-wrap items-center gap-4 ml-10">
+          <div className="flex flex-wrap items-center gap-2 md:gap-4 ml-10">
             {project.technologiesUsed.map((tech, idx) => (
               <h2
                 key={idx}
